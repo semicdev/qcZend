@@ -19,20 +19,4 @@ class IndexController extends AbstractActionController
         return new ViewModel();
     }
 
-    public function holaAction()
-    {	
-    	//conexion a base de datos
-    	//traer todos los archivos de tabla carreteras
-    	//array = resultado
-
-    	$tabla = 
-    	"<table class='table'>
-  	<tr><td>sdf</td><td>poip</td></tr>
-  	<tr><td>dgf</td><td>jk</td></tr>
-  	<tr><td>fgh</td><td>hjkj</td></tr>
-  	<tr><td>ghj</td><td>hjkhjk</td></tr>
-  </table>";
-  	$json="{valores:[2,4,56,8,0]}";
-    	return new ViewModel(array("texto"=>$tabla, "texto2"=>$json));
-    }
 }
