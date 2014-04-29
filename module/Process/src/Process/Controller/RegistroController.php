@@ -29,6 +29,14 @@ class RegistroController extends AbstractActionController
         return new viewModel(array('listaDirectorios'=>$dir,'directorioMedia'=>$directorioMedia));
     }
 
+    public function setinterseccionAction()
+    {
+    	$post = $this->getRequest()->getPost('interseccion', null);
+    	//var_dump($post);
+        echo '{"err":null}';
+        exit();
+    }
+
     public function usuarioAction()
     {
         return new viewModel();

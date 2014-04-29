@@ -327,7 +327,7 @@
     event.preventDefault();
     /* Guardar en setinterseccion */
     var inter = JSON.stringify(datosGuardar);
-     $.post( "setinterseccion.php", {interseccion : inter}, function( data ) {
+     $.post( "registro/setinterseccion", {interseccion : inter}, function( data ) {
          console.log(data);
          if(data.err == null){
           alert("La interseccion se Guardo con exito");
