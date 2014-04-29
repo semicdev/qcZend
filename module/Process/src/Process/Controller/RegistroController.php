@@ -11,12 +11,22 @@ namespace Process\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Process\Model\Entity\modeloregistro;
 
 class RegistroController extends AbstractActionController
-{
+{	
     public function indexAction()
-    {
-        return new viewModel();
+    {	
+    	// VARIABLES DEL SISTEMA
+ 		$directorioMedia = "C:\wamp\www\QualityCounts\Media";
+ 		$rutaAuxiliar = "";
+		// instancia de classe LeerCarpeta
+		
+    	$carpeta = new Modeloregistro($directorioMedia);
+    	$res = $carpeta -> AbrirCarpeta();// abrir carpeta default
+    	$dir = json_encode($res,true);
+    	//var_dump($dir);
+        return new viewModel(array('listaDirectorios'=>$dir,'directorioMedia'=>$directorioMedia));
     }
 
     public function usuarioAction()
